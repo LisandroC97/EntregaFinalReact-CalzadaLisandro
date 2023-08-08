@@ -1,9 +1,9 @@
-
-import SNKhead from '../assets/icons/SNKhead.png';
-import { CartWidget } from './CartWidget';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import SNKhead from '../assets/icons/SNKhead.png';
+import {CartWidget}  from './CartWidget';
+
 
 export const NavBar=()=>{
     return (
@@ -13,7 +13,7 @@ export const NavBar=()=>{
             <Nav className="me-auto">
                 <Nav.Link className='d-inline-flex' href="#home">
                     <img src={SNKhead}/>
-                    <Navbar.Brand href="#home">PUREgold</Navbar.Brand>
+                    <Navbar.Brand href="#home">PUREGOLD</Navbar.Brand>
                 </Nav.Link>
                 <Nav.Link href="#features">
                     Ayuda
