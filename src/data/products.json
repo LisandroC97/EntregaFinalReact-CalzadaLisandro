@@ -4,62 +4,62 @@
         "id":1,
         "category":"Anillo",
         "material":"Acero quirúrgico",
-        "precio":2
+        "price":2
     },
     {   "img":"https://i.ibb.co/dBgvgQG/Anillo-Plata.jpg",
         "name":"Anillo",
         "id":2,
         "category":"Anillo",
         "material":"Plata",
-        "precio":4
+        "price":4
     },
     {   "img":"https://i.ibb.co/2YP3chw/Anillo-Oro.jpg",
         "name":"Anillo",
         "id":3,
         "category":"Anillo",
         "material":"Oro",
-        "precio":6
+        "price":6
     },
     {   "img":"https://i.ibb.co/P4TjRdJ/Cubana-Acero.jpg",
         "name":"Cadena Cubana",
         "id":4,
         "category":"Cadena",
         "material":"Acero quirúrgico",
-        "precio":6
+        "price":6
     },
     {   "img":"https://i.ibb.co/1sC3Z8T/Cubana-Plata.jpg",
         "name":"Cadena Cubana",
         "id":5,
         "category":"Cadena",
         "material":"Plata",
-        "precio":8
+        "price":8
     },
     {   "img":"https://i.ibb.co/gjmf1zs/Cubana-Oro.jpg",
         "name":"Cadena Cubana",
         "id":6,
         "category":"Cadena",
         "material":"Oro",
-        "precio":10
+        "price":10
     },
     {   "img":"https://i.ibb.co/4mF7ShK/Pulsera-Acero.jpg",
         "name":"Pulsera",
         "id":7,
         "category":"Pulsera",
         "material":"Acero quirúrgico",
-        "precio":6
+        "price":6
     },
     {   "img":"https://i.ibb.co/jZjfjGv/Pulsera-Plata.jpg",
         "name":"Pulsera",
         "id":8,
         "category":"Pulsera",
         "material":"Plata",
-        "precio":5
+        "price":5
     },
     {   "img":"https://i.ibb.co/FVVGw6X/Pulsera-Oro.jpg",
         "name":"Pulsera",
         "id":9,
         "category":"Pulsera",
         "material":"Oro",
-        "precio":8
+        "price":8
     }
 ]
