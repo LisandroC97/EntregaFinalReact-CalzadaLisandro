@@ -11,15 +11,18 @@ export const NavBar=()=>{
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
             <Nav className="me-auto">
-                <Nav.Link className='d-inline-flex' href="#home">
-                    <img src={SNKhead}/>
-                    <Navbar.Brand href="#home">PUREGOLD</Navbar.Brand>
+                <Nav.Link className='d-inline-flex' href="/">
+                    <img src={SNKhead} alt=""/>
+                    <Navbar.Brand href="/">PUREGOLD</Navbar.Brand>
                 </Nav.Link>
-                <Nav.Link href="#features">
-                    Ayuda
+                <Nav.Link href="/category/Anillos">
+                    Anillos
                 </Nav.Link>
-                <Nav.Link href="#pricing">
-                Contactos
+                <Nav.Link href="/category/Cadenas">
+                Cadenas
+                </Nav.Link>
+                <Nav.Link href="/category/Pulseras">
+                Pulseras
                 </Nav.Link>
             </Nav><CartWidget/>
             </Container>
