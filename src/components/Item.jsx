@@ -15,7 +15,7 @@ export const Item=({product})=>
     {product.precio}
 </Card.Text>
 <Link to={`/item/${product.id}`}>
-<Button variant="secondary">Agregar al carrito</Button>
+<Button variant="secondary">Ver detalle</Button>
 </Link>
 </Card.Body>
 </Card>

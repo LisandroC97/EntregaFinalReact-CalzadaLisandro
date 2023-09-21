@@ -1,37 +1,37 @@
-import { useState, useEffect } from "react";
-import Container from "react-bootstrap/esm/Container";
-import data from '../data/products.json';
-import { ItemList } from "./ItemList";
-import {useParams} from "react-router-dom";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
+import { useParams } from 'react-router-dom';
+import { ItemList } from './ItemList';
+import {getFirestore,query, where, getDocs,collection} from "firebase/firestore" ;
+export const ItemListContainer = props => {
 
-export const ItemListContainer=(props)=>
-{
-    const [products, setProducts]=useState([]);
-    const {id}=useParams();
-    console.log(id)
-    useEffect(()=>{
-        const promise = new Promise((resolve,reject)=>{setTimeout(()=>resolve(data),1500);
-        });
-        promise.then(data=>
-            {
-                if(!id){
-                setProducts(data)}
-                else {
-                    const productsFiltered = data.filter(product => product.category === id);
-                    setProducts(productsFiltered);
-                }
-            })
-            
-    },[]);
-    
-    return (
+        const [products, setProducts] = useState ([]); 
+        const{id}=useParams();
+        const db = getFirestore()
         
-        <Container className="mt-4" >
-        <h1>{props.greeting}</h1>
+        useEffect (()=>{ 
+        
+            const refCollection = id
+            ? query(collection(db, "products"), where("category","==",id))
+            : collection(db, "products")
+            getDocs(refCollection).then (snapshot=>{
+                if(snapshot.size===0) console.log("no results")
+                else {
+                    setProducts(
+                        snapshot.docs.map(doc=>({
+                            id:doc.id, ...doc.data(),
+                        }))
+                    )
+                }
+            })        
+    }, [id]);
+    return (
+        <Container className="mt-4" style={{textAlign:"center"}} >
+        <h1>{id}</h1>
         <div style={{display:'flex',flexWrap:'wrap'}}>
         <ItemList products={products}/>
         </div>
         </Container>
-        
     )
 }

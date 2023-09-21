@@ -4,62 +4,71 @@
         "id":"1",
         "category":"Anillos",
         "material":"Acero quirúrgico",
-        "price":2
+        "price":2,
+        "stock":8
     },
     {   "img":"https://i.ibb.co/dBgvgQG/Anillo-Plata.jpg",
         "name":"Anillo",
         "id":"2",
         "category":"Anillos",
         "material":"Plata",
-        "price":4
+        "price":4,
+        "stock":7
     },
     {   "img":"https://i.ibb.co/2YP3chw/Anillo-Oro.jpg",
         "name":"Anillo",
         "id":"3",
         "category":"Anillos",
         "material":"Oro",
-        "price":6
+        "price":6,
+        "stock":12
     },
     {   "img":"https://i.ibb.co/P4TjRdJ/Cubana-Acero.jpg",
         "name":"Cadena Cubana",
         "id":"4",
         "category":"Cadenas",
         "material":"Acero quirúrgico",
-        "price":6
+        "price":6,
+        "stock":9
     },
     {   "img":"https://i.ibb.co/1sC3Z8T/Cubana-Plata.jpg",
         "name":"Cadena Cubana",
         "id":"5",
         "category":"Cadenas",
         "material":"Plata",
-        "price":8
+        "price":8,
+        "stock":5
     },
     {   "img":"https://i.ibb.co/gjmf1zs/Cubana-Oro.jpg",
         "name":"Cadena Cubana",
         "id":"6",
         "category":"Cadenas",
         "material":"Oro",
-        "price":10
+        "price":10,
+        "stock":3
     },
     {   "img":"https://i.ibb.co/4mF7ShK/Pulsera-Acero.jpg",
         "name":"Pulsera",
         "id":"7",
         "category":"Pulseras",
         "material":"Acero quirúrgico",
-        "price":6
+        "price":6,
+        "stock":7
     },
     {   "img":"https://i.ibb.co/jZjfjGv/Pulsera-Plata.jpg",
         "name":"Pulsera",
         "id":"8",
         "category":"Pulseras",
         "material":"Plata",
-        "price":5
+        "price":5,
+        "stock":8
     },
     {   "img":"https://i.ibb.co/FVVGw6X/Pulsera-Oro.jpg",
         "name":"Pulsera",
         "id":"9",
         "category":"Pulseras",
         "material":"Oro",
-        "price":8
+        "price":8,
+        "stock":6
     }
 ]
