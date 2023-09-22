@@ -12,9 +12,7 @@ export const ItemListContainer = props => {
         
         useEffect (()=>{ 
         
-            const refCollection = id
-            ? query(collection(db, "products"), where("category","==",id))
-            : collection(db, "products")
+            const refCollection = id? query(collection(db, "products"), where("category","==",id)): collection(db, "products")
             getDocs(refCollection).then (snapshot=>{
                 if(snapshot.size===0) console.log("no results")
                 else {

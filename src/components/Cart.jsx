@@ -1,14 +1,55 @@
-import { Container, Table, Button } from "react-bootstrap";
-
-import { useContext } from "react";
+import { Container, Table, Button, Form } from "react-bootstrap";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-
-export const Cart=()=>{
-
-    const {items}=useContext(CartContext)
-    const totalCarrito=()=>items.reduce((accumulator,current)=>accumulator+current.quantity*current.price,0)
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 
 
+
+    export const Cart =() => {
+        const {items, removeItem,clear} = useContext(CartContext)
+        const [formValues,setFormValues]=useState({
+            name:"",
+            phone:"",
+            email:"",
+        })
+        const totalCarrito=() =>
+            items.reduce(
+                (acumulador, valorActual) =>
+                    acumulador + valorActual.quantity * valorActual.price,
+                    0
+            )
+               const handleChange =ev =>{
+                setFormValues(prev=>({
+                    ...prev,
+                    [ev.target.name]:ev.target.value,
+                }))
+    
+               }
+               
+                const sendOrder =()=>{
+                    const order ={
+                        buyer: formValues,
+                        items,
+                        total:totalCarrito(),
+                    }
+    
+                    const db= getFirestore()
+                    const orderCollection =collection(db,"orders")
+                    addDoc(orderCollection, order).then(({id})=>{
+                        if(id){
+                            setFormValues({
+                                name:"",
+                                phone:"",
+                                email:"",
+                            })
+                            clear()
+                            alert("Su orden "+id+" ha sido completada con éxito!")
+                        }
+                    })
+                }
+    
+    
+    
     return (<Container>
         <br></br>
         <h2>Carrito</h2>
@@ -32,7 +73,7 @@ export const Cart=()=>{
                     <td>{item.material}</td>
                     <td>{item.quantity}</td>
                     <td>${item.price}</td>
-                    <td><Button variant="warning">Eliminar producto</Button></td>
+                    <td><Button variant="warning" onClick={()=>removeItem(item.id)}>Eliminar producto</Button></td>
                     </tr>
                     </>)
                 })}
@@ -47,14 +88,57 @@ export const Cart=()=>{
                 </tr>
             </tfoot>
         </Table>
+        <br/>
+        <Button variant="dark" style={{width:"40%",marginLeft:"400px"}} onClick={clear}>Vaciar Carrito</Button>
+        <br/>
+        <br/>
+        
+        <Form>
+                        <Form.Group classname="mb-3" controlId="formBasicEmail">
+                            <Form.Label> Nombre </Form.Label>
+                            <Form.Control
+                            onChange={handleChange}
+                            value={formValues.name}
+                            type="text"
+                            name="name"
+                            // required
+                            />
+                        </Form.Group>
+                        <Form.Group classname="mb-3" controlId="formBasicEmail">
+                            <Form.Label> Email </Form.Label>
+                            <Form.Control
+                            onChange={handleChange}
+                            value={formValues.email}
+                            type="email"
+                            name="email"
+                            />
+                        </Form.Group>
+                        <Form.Group classname="mb-3" controlId="formBasicEmail">
+                            <Form.Label> Phone </Form.Label>
+                            <Form.Control
+                            onChange={handleChange}
+                            value={formValues.phone}
+                            type="text"
+                            name="phone"
+                            />
+                        </Form.Group>
+                        <Form.Group classname="mb-3" controlId="formBasicEmail">
+                            <Form.Label> Dirección </Form.Label>
+                            <Form.Control
+                            onChange={handleChange}
+                            value={formValues.residency}
+                            type="text"
+                            name="residency"
+                            />
+                        </Form.Group>
+                    
+                </Form>
         
         <br/>
-        <div style={{width:"100%",marginLeft:"26 rem"}}>
-        <Button variant="dark" style={{width:"40%"}}>Vaciar Carrito</Button>
         <br/>
-        <br/>
-        <Button variant="warning" style={{width:"40%"}}>Finalizar Compra</Button>
-        </div>
+        <Button variant="warning" style={{width:"40%",marginLeft:"400px"}}onClick={sendOrder}>Finalizar Compra</Button>
+
+
         </Container>
     )
 

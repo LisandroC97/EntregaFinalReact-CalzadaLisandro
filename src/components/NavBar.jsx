@@ -14,15 +14,15 @@ export const NavBar=()=>{
             <Nav className="me-auto">
                 <Nav.Link className='d-inline-flex'as={Link} to="/">
                     <img src={PUREgold} alt=""/>
-                    <Navbar.Brand as={Link} to="/">PUREGOLD</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/" style={{marginLeft:"20px"}}>PUREGOLD</Navbar.Brand>
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Anillos">
+                <Nav.Link as={Link} to="/category/Anillos" style={{marginTop:"8px"}}>
                     Anillos
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Cadenas">
+                <Nav.Link as={Link} to="/category/Cadenas" style={{marginTop:"8px"}}>
                 Cadenas
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Pulseras">
+                <Nav.Link as={Link} to="/category/Pulseras" style={{marginTop:"8px"}}>
                 Pulseras
                 </Nav.Link>
             </Nav><CartWidget/>
