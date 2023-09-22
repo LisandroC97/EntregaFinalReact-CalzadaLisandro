@@ -119,7 +119,7 @@ import { collection, getFirestore, addDoc } from "firebase/firestore";
                             onChange={handleChange}
                             value={formValues.phone}
                             type="text"
-                            name="phone"
+                            name="Teléfono"
                             />
                         </Form.Group>
                         <Form.Group classname="mb-3" controlId="formBasicEmail">
