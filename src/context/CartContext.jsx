@@ -3,7 +3,18 @@ import { createContext, useState } from "react";
 export const CartContext = createContext([])
 export const CartProvider=({children}) => {
     const [items, setItems]=useState([])
-    const addItem= (product, quantity) => setItems(prev=>[...prev,{...product,quantity}])
+    const addItem= (product, quantity) => 
+    {   if(items?.some((itemToBuy)=>itemToBuy.id===product.id))
+            {  
+                let index=items.findIndex(indexItem => indexItem.id === product.id);
+                console.log("index",index)
+                items[index].quantity+=quantity;
+                }
+        
+        else{
+            setItems(prev=>[...prev,{...product,quantity}])
+        }
+    }
     const removeItem=id=>{
         const itemsFiltered=items.filter(item=>item.id!==id)
         setItems(itemsFiltered)
