@@ -1,0 +1,1 @@
+Se hace entrega del proyecto final. No se utilizaron librerías externas más allá de bootstrap para generar alertas o animaciones.
