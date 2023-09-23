@@ -1,7 +1,8 @@
-import { Container, Table, Button, Form } from "react-bootstrap";
+import { Container, Table, Button, Form} from "react-bootstrap";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
+import { Link } from 'react-router-dom';
 
 
 
@@ -18,14 +19,13 @@ import { collection, getFirestore, addDoc } from "firebase/firestore";
                     acumulador + valorActual.quantity * valorActual.price,
                     0
             )
-               const handleChange =ev =>{
+            const handleChange =ev =>{
                 setFormValues(prev=>({
                     ...prev,
                     [ev.target.name]:ev.target.value,
                 }))
     
-               }
-               
+            }
                 const sendOrder =()=>{
                     const order ={
                         buyer: formValues,
@@ -48,7 +48,22 @@ import { collection, getFirestore, addDoc } from "firebase/firestore";
                     })
                 }
     
-    
+    if (items.length===0) {
+        
+        return (
+                    <Container style={{textAlign:"center"}}>
+
+                        <br/>
+                        <h4 class="h4estilo"> Ups! No hay nada por aquí</h4>
+                        <br/>
+                        <Button variant="dark">
+                        <Link to="/" style={{textDecoration:"none", color:"white"}}>
+                        <h4 class="h4estilo"> Volver al Inicio </h4>
+                        </Link>
+                        </Button>
+                    </Container>)
+            }
+                else{
     
     return (<Container>
         <br></br>
@@ -142,4 +157,4 @@ import { collection, getFirestore, addDoc } from "firebase/firestore";
         </Container>
     )
 
-}
+}}

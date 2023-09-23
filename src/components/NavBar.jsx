@@ -16,13 +16,13 @@ export const NavBar=()=>{
                     <img src={PUREgold} alt=""/>
                     <Navbar.Brand as={Link} to="/" style={{marginLeft:"20px"}}>PUREGOLD</Navbar.Brand>
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Anillos" style={{marginTop:"8px"}}>
+                <Nav.Link as={Link} to="/category/Anillos" style={{marginTop:"8px", color:"#FFB700"}}>
                     Anillos
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Cadenas" style={{marginTop:"8px"}}>
+                <Nav.Link as={Link} to="/category/Cadenas" style={{marginTop:"8px",color:"#FFB700"}}>
                 Cadenas
                 </Nav.Link>
-                <Nav.Link as={Link} to="/category/Pulseras" style={{marginTop:"8px"}}>
+                <Nav.Link as={Link} to="/category/Pulseras" style={{marginTop:"8px",color:"#FFB700"}}>
                 Pulseras
                 </Nav.Link>
             </Nav><CartWidget/>

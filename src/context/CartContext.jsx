@@ -9,6 +9,7 @@ export const CartProvider=({children}) => {
         setItems(itemsFiltered)
     }
     const clear=()=>setItems([])
+    console.log(items)
     const totalWidget= items.reduce((sum,value)=>sum + value.quantity,0)
     return (
         <CartContext.Provider value={{items, addItem,removeItem,clear,totalWidget}}>
